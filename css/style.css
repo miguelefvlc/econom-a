@@ -228,9 +228,11 @@ input[type="number"] {
 }
 
 .dropdown-item.bold-text {
-    font-weight: 600;
-    font-size: 14px;
-    padding-left: 16px;
+    padding: 12px 16px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
     color: var(--cyan-neon);
 }
 
