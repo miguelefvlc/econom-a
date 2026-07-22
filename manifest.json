@@ -1,0 +1,17 @@
+{
+  "name": "Balance - Economía App",
+  "short_name": "Balance",
+  "description": "App para gestionar tu economía personal",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0c0e1c",
+  "theme_color": "#0c0e1c",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
