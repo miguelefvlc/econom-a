@@ -341,8 +341,16 @@ function updateChart(expensesByCategory) {
     const data = Object.values(expensesByCategory);
     
     const colors = [
-        '#ef4444', '#f59e0b', '#10b981', '#3b82f6', '#8b5cf6', 
-        '#ec4899', '#14b8a6', '#f43f5e', '#84cc16', '#06b6d4'
+        '#00f0ff', /* Cyan neon */
+        '#ff0055', /* Magenta neon */
+        '#b000ff', /* Purple neon */
+        '#00ff9d', /* Green neon */
+        '#0055ff', /* Deep blue */
+        '#ffaa00', /* Orange neon */
+        '#ff00ea', /* Pink neon */
+        '#00ffea', /* Aqua neon */
+        '#ffff00', /* Yellow neon */
+        '#7700ff'  /* Violet neon */
     ];
     
     if (balanceChartInstance) {
@@ -361,7 +369,7 @@ function updateChart(expensesByCategory) {
                 }]
             },
             options: {
-                cutout: '80%',
+                cutout: '88%',
                 plugins: { legend: { display: false }, tooltip: { enabled: false } }
             }
         });
@@ -382,7 +390,14 @@ function updateChart(expensesByCategory) {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            cutout: '80%',
+            cutout: '88%',
+            elements: {
+                arc: {
+                    borderWidth: 0,
+                    shadowBlur: 10,
+                    shadowColor: 'rgba(0,0,0,0.5)'
+                }
+            },
             plugins: {
                 legend: { display: false },
                 tooltip: {
