@@ -75,6 +75,8 @@ document.addEventListener('click', (e) => {
 });
 
 const dropdownItems = document.querySelectorAll('.dropdown-item');
+const headerContent = dropdownHeader.querySelector('.header-content');
+
 dropdownItems.forEach(item => {
     item.addEventListener('click', () => {
         const value = item.getAttribute('data-value');
@@ -92,7 +94,13 @@ dropdownItems.forEach(item => {
             selectedConceptText.classList.add('italic-text');
         }
 
-        headerIconContainer.setAttribute('data-lucide', iconName);
+        // Reemplazar el icono SVG viejo por un nuevo <i> y volver a renderizarlo
+        const oldIcon = headerContent.querySelector('svg, i');
+        if (oldIcon) oldIcon.remove();
+        
+        const newIcon = document.createElement('i');
+        newIcon.setAttribute('data-lucide', iconName);
+        headerContent.insertBefore(newIcon, selectedConceptText);
         lucide.createIcons();
         
         dropdownList.classList.add('hidden');
