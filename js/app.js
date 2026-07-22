@@ -312,13 +312,15 @@ async function fetchCSV(year) {
     
     // Si tenemos token, intentamos leer la versión más reciente directamente de GitHub
     if (token) {
-        const apiUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/data/transacciones_${year}.csv`;
+        // Añadimos un parámetro ?t= para evitar que el navegador guarde el archivo en caché
+        const apiUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/data/transacciones_${year}.csv?t=${Date.now()}`;
         try {
             const res = await fetch(apiUrl, {
                 headers: { 
                     'Authorization': `Bearer ${token}`,
                     'Accept': 'application/vnd.github.v3.raw' // Pide el archivo crudo, sin base64
-                }
+                },
+                cache: 'no-store'
             });
             if (res.ok) {
                 return await res.text();
@@ -379,13 +381,18 @@ async function loadDashboardData() {
         const selMonth = monthSelector.value;
         
         for (let i = lines.length - 1; i >= 0; i--) {
-            const line = lines[i];
+            let line = lines[i];
             if (!line) continue;
+            
+            // Limpieza robusta por si se edita con Excel y envuelve la línea en comillas
+            if (line.startsWith('"') && line.endsWith('"')) {
+                line = line.substring(1, line.length - 1).replace(/""/g, '"');
+            }
             
             const parts = line.split(',');
             if (parts.length < 4) continue;
             
-            const date = parts[0];
+            const date = parts[0].replace(/"/g, '');
             
             // Filter by month if tab is 'mes'
             if (currentTab === 'mes') {
@@ -394,8 +401,8 @@ async function loadDashboardData() {
             }
             
             const conceptFull = parts[1].replace(/"/g, '');
-            const amount = parseFloat(parts[2]);
-            const type = parts[3].trim();
+            const amount = parseFloat(parts[2].replace(/"/g, ''));
+            const type = parts[3].replace(/"/g, '').trim();
             
             let parentConcept = conceptFull.includes(' - ') ? conceptFull.split(' - ')[0] : conceptFull;
             let iconName = getIconForConcept(parentConcept);
