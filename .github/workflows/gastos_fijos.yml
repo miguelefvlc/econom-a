@@ -1,0 +1,52 @@
+name: Automatización de Gastos Fijos
+
+on:
+  schedule:
+    - cron: '0 0 1 * *' # Ejecutar a las 00:00 UTC el día 1 de cada mes
+  workflow_dispatch: # Permite ejecutarlo a mano desde la pestaña Actions
+
+permissions:
+  contents: write
+
+jobs:
+  add-fixed-expenses:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Añadir Gastos Fijos Mensuales
+        run: |
+          YEAR=$(date +%Y)
+          FILE="data/transacciones_${YEAR}.csv"
+          DATE_STR=$(date +%Y-%m-01)
+          
+          # Si el archivo no existe para el nuevo año, se crea con la cabecera
+          if [ ! -f "$FILE" ]; then
+            mkdir -p data
+            echo "Fecha,Concepto,Cantidad,Tipo" > "$FILE"
+          fi
+          
+          # Asegurar que la última línea tiene un salto (evitar que se pegue a la anterior)
+          [ -n "$(tail -c1 "$FILE")" ] && echo "" >> "$FILE"
+          
+          # Añadir las transacciones sin decimales y con las categorías adaptadas
+          echo "$DATE_STR,\"Hogar - Hipoteca\",209,Gasto" >> "$FILE"
+          echo "$DATE_STR,\"Hogar - Seguro de vida\",18,Gasto" >> "$FILE"
+          echo "$DATE_STR,\"Hogar - Seguro de hogar\",27,Gasto" >> "$FILE"
+          echo "$DATE_STR,\"Hogar - Otro\",200,Gasto" >> "$FILE"
+          echo "$DATE_STR,\"Deporte - Gym\",15,Gasto" >> "$FILE"
+          echo "$DATE_STR,\"Deporte - Fisioterapeuta\",45,Gasto" >> "$FILE"
+          echo "$DATE_STR,\"Plataformas digitales\",20,Gasto" >> "$FILE"
+
+      - name: Hacer Commit y Subir
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No hay cambios."
+          else
+            git commit -m "Automatización: Gastos fijos añadidos"
+            git push
+          fi

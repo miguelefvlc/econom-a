@@ -105,7 +105,8 @@ btnExpense.addEventListener('click', () => addTransaction('Gasto'));
 
 async function addTransaction(type) {
     const amountStr = amountInput.value.trim();
-    const amount = parseFloat(amountStr.replace(',', '.'));
+    // Redondear para quitar decimales como pidió el usuario
+    const amount = Math.round(parseFloat(amountStr.replace(',', '.')));
     const concept = conceptInput.value;
 
     if (!amountStr || isNaN(amount) || amount <= 0) {
@@ -126,7 +127,8 @@ async function addTransaction(type) {
     const year = date.getFullYear();
     const dateString = `${year}-${month}-${day}`;
     
-    const newLine = `\n${dateString},"${concept}",${amount.toFixed(2)},${type}`;
+    // Guardamos sin decimales
+    const newLine = `\n${dateString},"${concept}",${amount},${type}`;
 
     showStatus('Guardando en GitHub...', 'success'); 
 

@@ -231,7 +231,11 @@ input[type="number"] {
     font-weight: 600;
     font-size: 14px;
     padding-left: 16px;
-    color: var(--text-primary);
+    color: var(--cyan-neon);
+}
+
+.dropdown-item.bold-text > i {
+    color: var(--cyan-neon);
 }
 
 .dropdown-item > i {
