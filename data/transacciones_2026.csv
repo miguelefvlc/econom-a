@@ -1,0 +1,96 @@
+Fecha,Concepto,Cantidad,Tipo
+2026-01-01,Hogar - Hipoteca,209.0,Gasto
+2026-01-01,Transporte,9.0,Gasto
+2026-01-01,Ocio - Restaurantes,45.0,Gasto
+2026-01-01,Ocio - Restaurantes,26.0,Gasto
+2026-01-01,Transporte,40.0,Gasto
+2026-01-01,Nómina,1917.0,Ingreso
+2026-01-01,Regalo/otro - Regalos,120.0,Ingreso
+2026-01-01,Regalo/otro - Regalos,756.0,Gasto
+2026-01-01,Plataformas - Otras,30.0,Gasto
+2026-01-01,Transporte,30.0,Gasto
+2026-01-01,Hogar - Seguro vida,18.0,Gasto
+2026-01-01,Hogar - Seguro hogar,27.0,Gasto
+2026-01-01,Hogar - Cuenta,200.0,Gasto
+2026-01-01,Deporte - Deporte,15.0,Gasto
+2026-02-01,Deporte - Deporte,45.0,Gasto
+2026-02-01,Nómina,2543.0,Ingreso
+2026-02-01,Ocio - Restaurantes,183.0,Gasto
+2026-02-01,Compras - Otros,22.0,Gasto
+2026-02-01,Transporte,8.0,Gasto
+2026-02-01,Ocio - Comedor,50.0,Gasto
+2026-02-01,Transporte,9.0,Gasto
+2026-02-01,Hogar - Hipoteca,209.0,Gasto
+2026-02-01,Compras - Ropa y calzado,90.0,Gasto
+2026-02-01,Hogar - Seguro vida,18.0,Gasto
+2026-02-01,Hogar - Seguro hogar,27.0,Gasto
+2026-02-01,Compras - Ropa y calzado,116.0,Gasto
+2026-02-01,Hogar - Cuenta,200.0,Gasto
+2026-02-01,Compras - Tecnología,50.0,Gasto
+2026-02-01,Transporte,30.0,Gasto
+2026-02-01,Plataformas - Otras,30.0,Gasto
+2026-02-01,Compras - Ropa y calzado,130.0,Gasto
+2026-02-01,Deporte - Deporte,15.0,Gasto
+2026-03-01,Compras - Otros,28.0,Gasto
+2026-03-01,Transporte,30.0,Gasto
+2026-03-01,Ocio - Comedor,28.0,Gasto
+2026-03-01,Compras - Otros,16.0,Gasto
+2026-03-01,Transporte,100.0,Gasto
+2026-03-01,Ocio - Restaurantes,90.0,Gasto
+2026-03-01,Nómina,2054.0,Ingreso
+2026-03-01,Compras - Tecnología,1300.0,Gasto
+2026-03-01,Deporte - Deporte,45.0,Gasto
+2026-03-01,Hogar - Hipoteca,209.0,Gasto
+2026-03-01,Hogar - Seguro vida,18.0,Gasto
+2026-03-01,Hogar - Seguro hogar,27.0,Gasto
+2026-03-01,Hogar - Cuenta,200.0,Gasto
+2026-03-01,Deporte - Deporte,15.0,Gasto
+2026-03-01,Transporte,30.0,Gasto
+2026-03-01,Plataformas - Otras,30.0,Gasto
+2026-04-01,Transporte,30.0,Gasto
+2026-04-01,Transporte,35.0,Gasto
+2026-04-01,Ocio - Restaurantes,46.0,Gasto
+2026-04-01,Ocio - Restaurantes,54.0,Gasto
+2026-04-01,Ocio - Restaurantes,36.0,Gasto
+2026-04-01,Ocio - Restaurantes,61.0,Gasto
+2026-04-01,Hogar - Cuenta,200.0,Gasto
+2026-04-01,Nómina,1900.0,Ingreso
+2026-04-01,Plataformas - Otras,30.0,Gasto
+2026-04-01,Hogar - Seguro vida,18.0,Gasto
+2026-04-01,Hogar - Seguro hogar,27.0,Gasto
+2026-04-01,Hogar - Hipoteca,209.0,Gasto
+2026-04-01,Deporte - Deporte,45.0,Gasto
+2026-04-01,Deporte - Deporte,15.0,Gasto
+2026-05-01,Hogar - Seguro vida,18.0,Gasto
+2026-05-01,Hogar - Cuenta,200.0,Gasto
+2026-05-01,Hogar - Hipoteca,209.0,Gasto
+2026-05-01,Hogar - Seguro hogar,27.0,Gasto
+2026-05-01,Plataformas - Otras,30.0,Gasto
+2026-05-01,Transporte,30.0,Gasto
+2026-05-01,Transporte,20.0,Gasto
+2026-05-01,Nómina,1900.0,Ingreso
+2026-05-01,Deporte - Deporte,45.0,Gasto
+2026-05-01,Deporte - Deporte,15.0,Gasto
+2026-05-01,Ocio,30.0,Gasto
+2026-06-01,Hogar - Cuenta,200.0,Gasto
+2026-06-01,Hogar - Seguro hogar,27.0,Gasto
+2026-06-01,Nómina,2816.0,Ingreso
+2026-06-01,Compras - Ropa y calzado,80.0,Gasto
+2026-06-01,Ocio - Comedor,20.0,Gasto
+2026-06-01,Renta,103.0,Gasto
+2026-06-01,Hogar - Hipoteca,209.0,Gasto
+2026-06-01,Hogar - Seguro vida,18.0,Gasto
+2026-06-01,Transporte,30.0,Gasto
+2026-06-01,Deporte - Deporte,15.0,Gasto
+2026-06-01,Deporte - Deporte,45.0,Gasto
+2026-06-01,Plataformas - Otras,30.0,Gasto
+2026-07-01,Compras,100.0,Gasto
+2026-07-01,Ocio,50.0,Gasto
+2026-07-01,Deporte - Deporte,45.0,Gasto
+2026-07-01,Hogar - Hipoteca,209.0,Gasto
+2026-07-01,Hogar - Seguro vida,18.0,Gasto
+2026-07-01,Hogar - Seguro hogar,27.0,Gasto
+2026-07-01,Hogar - Cuenta,200.0,Gasto
+2026-07-01,Deporte - Deporte,15.0,Gasto
+2026-07-01,Transporte,30.0,Gasto
+2026-07-01,Plataformas - Otras,30.0,Gasto

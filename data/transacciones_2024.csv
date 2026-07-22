@@ -1,0 +1,121 @@
+Fecha,Concepto,Cantidad,Tipo
+2024-01-01,Hogar - Hipoteca,209.0,Gasto
+2024-01-01,Ocio,89.0,Gasto
+2024-01-01,Compras,31.0,Gasto
+2024-01-01,Regalo/otro,571.0,Gasto
+2024-01-01,Deporte,15.0,Gasto
+2024-01-01,Ventas,5833.0,Ingreso
+2024-01-01,Nómina,1831.0,Ingreso
+2024-01-01,Regalo/otro,50.0,Ingreso
+2024-01-01,Transporte,115.0,Gasto
+2024-01-01,Hogar - Seguro vida,18.0,Gasto
+2024-01-01,Hogar - Seguro hogar,27.0,Gasto
+2024-01-01,Hogar - Cuenta,200.0,Gasto
+2024-02-01,Ocio,74.0,Gasto
+2024-02-01,Compras,37.0,Gasto
+2024-02-01,Viajes,54.0,Gasto
+2024-02-01,Hogar - Cuenta,200.0,Gasto
+2024-02-01,Xapa't,61.0,Gasto
+2024-02-01,Deporte,15.0,Gasto
+2024-02-01,Transporte,15.0,Gasto
+2024-02-01,Xapa't,154.0,Ingreso
+2024-02-01,Hogar - Seguro vida,18.0,Gasto
+2024-02-01,Hogar - Seguro hogar,27.0,Gasto
+2024-02-01,Nómina,1910.0,Ingreso
+2024-02-01,Hogar - Hipoteca,209.0,Gasto
+2024-03-01,Deporte,15.0,Gasto
+2024-03-01,Compras,89.0,Gasto
+2024-03-01,Nómina,1840.0,Ingreso
+2024-03-01,Ocio,137.0,Gasto
+2024-03-01,Hogar - Hipoteca,209.0,Gasto
+2024-03-01,Hogar - Seguro vida,18.0,Gasto
+2024-03-01,Hogar - Seguro hogar,27.0,Gasto
+2024-03-01,Hogar - Cuenta,200.0,Gasto
+2024-04-01,Hogar - Hipoteca,209.0,Gasto
+2024-04-01,Hogar - Seguro hogar,27.0,Gasto
+2024-04-01,Hogar - Cuenta,200.0,Gasto
+2024-04-01,Deporte,15.0,Gasto
+2024-04-01,Xapa't,154.0,Gasto
+2024-04-01,Ocio,166.0,Gasto
+2024-04-01,Hogar - Seguro vida,18.0,Gasto
+2024-04-01,Regalo/otro,50.0,Ingreso
+2024-04-01,Viajes,85.0,Gasto
+2024-04-01,Transporte,80.0,Gasto
+2024-04-01,Xapa't,328.0,Ingreso
+2024-04-01,Nómina,5355.0,Ingreso
+2024-04-01,Compras,202.0,Gasto
+2024-05-01,Ocio,101.0,Gasto
+2024-05-01,Regalo/otro,19.0,Gasto
+2024-05-01,Hogar - Hipoteca,209.0,Gasto
+2024-05-01,Hogar - Seguro hogar,27.0,Gasto
+2024-05-01,Viajes,50.0,Gasto
+2024-05-01,Hogar - Seguro vida,18.0,Gasto
+2024-05-01,Compras,178.0,Gasto
+2024-05-01,Hogar - Cuenta,200.0,Gasto
+2024-05-01,Deporte,15.0,Gasto
+2024-05-01,Renta,462.0,Ingreso
+2024-05-01,Nómina,2855.0,Ingreso
+2024-06-01,Compras,125.0,Gasto
+2024-06-01,Hogar - Cuenta,200.0,Gasto
+2024-06-01,Deporte,15.0,Gasto
+2024-06-01,Hogar - Hipoteca,209.0,Gasto
+2024-06-01,Hogar - Seguro vida,18.0,Gasto
+2024-06-01,Ocio,186.0,Gasto
+2024-06-01,Hogar - Seguro hogar,27.0,Gasto
+2024-06-01,Transporte,50.0,Gasto
+2024-07-01,Hogar - Seguro vida,18.0,Gasto
+2024-07-01,Compras,63.0,Gasto
+2024-07-01,Hogar - Cuenta,200.0,Gasto
+2024-07-01,Nómina,866.0,Ingreso
+2024-07-01,Xapa't,362.0,Ingreso
+2024-07-01,Ocio,354.0,Gasto
+2024-07-01,Deporte,37.0,Gasto
+2024-07-01,Hogar - Hipoteca,209.0,Gasto
+2024-07-01,Xapa't,318.0,Gasto
+2024-07-01,Hogar - Seguro hogar,27.0,Gasto
+2024-07-01,Viajes,551.0,Gasto
+2024-07-01,Transporte,30.0,Gasto
+2024-08-01,Deporte,59.0,Gasto
+2024-08-01,Nómina,1082.0,Ingreso
+2024-08-01,Hogar - Hipoteca,209.0,Gasto
+2024-08-01,Hogar - Cuenta,273.0,Gasto
+2024-08-01,Compras,9.0,Gasto
+2024-08-01,Hogar - Seguro hogar,27.0,Gasto
+2024-08-01,Ocio,55.0,Gasto
+2024-08-01,Hogar - Seguro vida,18.0,Gasto
+2024-09-01,Hogar - Seguro vida,18.0,Gasto
+2024-09-01,Deporte,80.0,Gasto
+2024-09-01,Hogar - Hipoteca,209.0,Gasto
+2024-09-01,Hogar - Cuenta,200.0,Gasto
+2024-09-01,Transporte,3988.0,Gasto
+2024-09-01,Hogar - Seguro hogar,27.0,Gasto
+2024-09-01,Compras,70.0,Gasto
+2024-09-01,Nómina,1618.0,Ingreso
+2024-09-01,Ocio,175.0,Gasto
+2024-10-01,Hogar - Hipoteca,209.0,Gasto
+2024-10-01,Hogar - Seguro vida,18.0,Gasto
+2024-10-01,Hogar - Seguro hogar,27.0,Gasto
+2024-10-01,Hogar - Cuenta,200.0,Gasto
+2024-10-01,Plataformas,36.0,Gasto
+2024-10-01,Compras,295.0,Gasto
+2024-10-01,Transporte,10.0,Gasto
+2024-10-01,Nómina,1718.0,Ingreso
+2024-10-01,Ocio,35.0,Gasto
+2024-10-01,Deporte,60.0,Gasto
+2024-11-01,Transporte,16.0,Gasto
+2024-11-01,Hogar - Seguro hogar,27.0,Gasto
+2024-11-01,Hogar - Seguro vida,18.0,Gasto
+2024-11-01,Hogar - Hipoteca,209.0,Gasto
+2024-11-01,Hogar - Cuenta,200.0,Gasto
+2024-11-01,Ocio,30.0,Gasto
+2024-11-01,Nómina,1876.0,Ingreso
+2024-11-01,Deporte,60.0,Gasto
+2024-12-01,Compras,140.0,Gasto
+2024-12-01,Hogar - Hipoteca,209.0,Gasto
+2024-12-01,Hogar - Seguro vida,18.0,Gasto
+2024-12-01,Hogar - Seguro hogar,27.0,Gasto
+2024-12-01,Hogar - Cuenta,200.0,Gasto
+2024-12-01,Transporte,30.0,Gasto
+2024-12-01,Ocio,80.0,Gasto
+2024-12-01,Deporte,15.0,Gasto
+2024-12-01,Nómina,2936.0,Ingreso

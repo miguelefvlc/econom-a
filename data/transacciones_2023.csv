@@ -1,0 +1,176 @@
+Fecha,Concepto,Cantidad,Tipo
+0001-09-01,Hogar - Seguro vida,18.0,Gasto
+0001-09-01,Hogar - Seguro hogar,27.0,Gasto
+0001-09-01,Hogar - Cuenta,200.0,Gasto
+0001-09-01,Deporte - Deporte,15.0,Gasto
+0001-09-01,Nómina,972.0,Ingreso
+0001-09-01,Ventas,1000.0,Ingreso
+0001-09-01,Ocio - Restaurantes,30.0,Gasto
+0001-09-01,Hogar - Hipoteca,209.0,Gasto
+0001-09-01,Transporte,20.0,Gasto
+0001-09-01,Compras - Otros,18.0,Gasto
+0001-09-01,Compras,40.0,Gasto
+0001-10-01,Ocio - Restaurantes,13.0,Gasto
+0001-10-01,Hogar - Seguro vida,18.0,Gasto
+0001-10-01,Hogar - Seguro hogar,27.0,Gasto
+0001-10-01,Hogar - Cuenta,200.0,Gasto
+0001-10-01,Ventas,1000.0,Ingreso
+0001-10-01,Hogar - Hipoteca,209.0,Gasto
+0001-10-01,Ventas,10.0,Ingreso
+0001-10-01,Plataformas - Spotify,36.0,Gasto
+0001-10-01,Ocio - Restaurantes,15.0,Gasto
+0001-10-01,Compras - Cultura,20.0,Gasto
+0001-10-01,Ocio - Comedor,38.0,Gasto
+0001-10-01,Nómina,1865.0,Ingreso
+0001-10-01,Deporte - Deporte,15.0,Gasto
+0001-11-01,Nómina,1831.0,Ingreso
+0001-11-01,Hogar - Seguro hogar,27.0,Gasto
+0001-11-01,Hogar - Hipoteca,209.0,Gasto
+0001-11-01,Hogar - Seguro vida,18.0,Gasto
+0001-11-01,Hogar - Cuenta,200.0,Gasto
+0001-11-01,Deporte - Deporte,15.0,Gasto
+0001-11-01,Xapa't,40.0,Ingreso
+0001-11-01,Ocio - Restaurantes,50.0,Gasto
+0001-11-01,Transporte,15.0,Gasto
+0001-11-01,Compras - Otros,90.0,Gasto
+0001-11-01,Ventas,1000.0,Ingreso
+0001-11-01,Ocio - Comedor,55.0,Gasto
+2023-01-01,Hogar - Hipoteca,209.0,Gasto
+2023-01-01,Transporte,66.0,Gasto
+2023-01-01,Xapa't,14.0,Gasto
+2023-01-01,Regalo/otro,150.0,Ingreso
+2023-01-01,Transporte,150.0,Gasto
+2023-01-01,Ventas,170.0,Ingreso
+2023-01-01,Regalo/otro,700.0,Gasto
+2023-01-01,Xapa't,40.0,Ingreso
+2023-01-01,Xapa't,40.0,Ingreso
+2023-01-01,Xapa't,37.0,Gasto
+2023-01-01,Compras - Otros,2.0,Gasto
+2023-01-01,Xapa't,240.0,Ingreso
+2023-01-01,Xapa't,82.0,Ingreso
+2023-01-01,Xapa't,180.0,Ingreso
+2023-01-01,Deporte - Deporte,28.0,Gasto
+2023-01-01,Hogar - Cuenta,200.0,Gasto
+2023-01-01,Hogar - Seguro hogar,27.0,Gasto
+2023-01-01,Nómina,333.0,Ingreso
+2023-01-01,Hogar - Seguro vida,18.0,Gasto
+2023-01-01,Transporte,25.0,Gasto
+2023-01-01,Transporte,17.0,Gasto
+2023-02-01,Nómina,1848.0,Ingreso
+2023-02-01,Ocio,25.0,Gasto
+2023-02-01,Hogar - Hipoteca,209.0,Gasto
+2023-02-01,Hogar - Seguro vida,18.0,Gasto
+2023-02-01,Hogar - Seguro hogar,27.0,Gasto
+2023-02-01,Hogar - Cuenta,200.0,Gasto
+2023-02-01,Deporte - Deporte,27.0,Gasto
+2023-02-01,Ocio - Restaurantes,17.0,Gasto
+2023-02-01,Ventas,50.0,Ingreso
+2023-02-01,Compras - Regalos,30.0,Gasto
+2023-02-01,Xapa't,112.0,Gasto
+2023-02-01,Xapa't,111.0,Ingreso
+2023-02-01,Compras - Otros,90.0,Gasto
+2023-02-01,Regalo/otro,150.0,Ingreso
+2023-02-01,Ventas,190.0,Ingreso
+2023-02-01,Transporte,18.0,Gasto
+2023-02-01,Regalo/otro,50.0,Ingreso
+2023-03-01,Xapa't,111.0,Gasto
+2023-03-01,Ocio - Restaurantes,90.0,Gasto
+2023-03-01,Compras - Ropa y calzado,170.0,Gasto
+2023-03-01,Regalo/otro,50.0,Ingreso
+2023-03-01,Xapa't,12.0,Gasto
+2023-03-01,Nómina,1087.0,Ingreso
+2023-03-01,Compras,170.0,Gasto
+2023-03-01,Xapa't,66.0,Ingreso
+2023-03-01,Xapa't,8.0,Gasto
+2023-03-01,Ocio - Restaurantes,8.0,Gasto
+2023-03-01,Xapa't,39.0,Gasto
+2023-03-01,Ocio - Restaurantes,15.0,Gasto
+2023-03-01,Xapa't,330.0,Ingreso
+2023-03-01,Ocio - Restaurantes,13.0,Gasto
+2023-03-01,Deporte - Deporte,27.0,Gasto
+2023-03-01,Xapa't,82.0,Ingreso
+2023-03-01,Hogar - Cuenta,200.0,Gasto
+2023-03-01,Hogar - Seguro hogar,27.0,Gasto
+2023-03-01,Hogar - Seguro vida,18.0,Gasto
+2023-03-01,Hogar - Hipoteca,209.0,Gasto
+2023-03-01,Ocio - Restaurantes,12.0,Gasto
+2023-04-01,Ocio - Restaurantes,4.5,Gasto
+2023-04-01,Nómina,1087.0,Ingreso
+2023-04-01,Transporte,18.0,Gasto
+2023-04-01,Hogar - Seguro vida,18.0,Gasto
+2023-04-01,Hogar - Seguro hogar,27.0,Gasto
+2023-04-01,Hogar - Cuenta,200.0,Gasto
+2023-04-01,Deporte - Deporte,27.0,Gasto
+2023-04-01,Compras - Otros,90.0,Gasto
+2023-04-01,Viajes - Viajes,206.0,Gasto
+2023-04-01,Ocio - Restaurantes,9.0,Gasto
+2023-04-01,Regalo/otro,500.0,Ingreso
+2023-04-01,Ocio - Restaurantes,3.0,Gasto
+2023-04-01,Ocio - Restaurantes,25.0,Gasto
+2023-04-01,Hogar - Hipoteca,209.0,Gasto
+2023-04-01,Compras - Otros,60.0,Gasto
+2023-05-01,Hogar - Hipoteca,209.0,Gasto
+2023-05-01,Nómina,1087.0,Ingreso
+2023-05-01,Ventas,400.0,Ingreso
+2023-05-01,Ocio - Restaurantes,13.0,Gasto
+2023-05-01,Ventas,23.0,Ingreso
+2023-05-01,Deporte,15.0,Gasto
+2023-05-01,Regalo/otro,15.0,Gasto
+2023-05-01,Deporte - Deporte,27.0,Gasto
+2023-05-01,Hogar - Cuenta,200.0,Gasto
+2023-05-01,Hogar - Seguro hogar,27.0,Gasto
+2023-05-01,Hogar - Seguro vida,18.0,Gasto
+2023-05-01,Compras,670.0,Gasto
+2023-05-01,Ocio - Restaurantes,8.0,Gasto
+2023-06-01,Hogar - Hipoteca,209.0,Gasto
+2023-06-01,Ocio - Restaurantes,22.0,Gasto
+2023-06-01,Renta,1446.0,Gasto
+2023-06-01,Xapa't,8.0,Gasto
+2023-06-01,Nómina,2578.0,Ingreso
+2023-06-01,Transporte,154.0,Gasto
+2023-06-01,Ventas,30.0,Ingreso
+2023-06-01,Xapa't,82.0,Ingreso
+2023-06-01,Ocio - Restaurantes,50.0,Gasto
+2023-06-01,Compras - Ropa y calzado,100.0,Gasto
+2023-06-01,Compras - Cultura,10.0,Gasto
+2023-06-01,Transporte,18.0,Gasto
+2023-06-01,Deporte - Deporte,15.0,Gasto
+2023-06-01,Hogar - Cuenta,200.0,Gasto
+2023-06-01,Hogar - Seguro hogar,27.0,Gasto
+2023-06-01,Hogar - Seguro vida,18.0,Gasto
+2023-06-01,Ventas,125.0,Ingreso
+2023-07-01,Ocio - Restaurantes,12.0,Gasto
+2023-07-01,Deporte - Deporte,15.0,Gasto
+2023-07-01,Xapa't,14.0,Gasto
+2023-07-01,Hogar - Seguro vida,18.0,Gasto
+2023-07-01,Hogar - Hipoteca,209.0,Gasto
+2023-07-01,Xapa't,165.0,Ingreso
+2023-07-01,Hogar - Cuenta,200.0,Gasto
+2023-07-01,Ocio - Restaurantes,20.0,Gasto
+2023-07-01,Hogar - Seguro hogar,27.0,Gasto
+2023-07-01,Ocio - Restaurantes,20.0,Gasto
+2023-07-01,Ocio - Restaurantes,12.0,Gasto
+2023-07-01,Regalo/otro,50.0,Gasto
+2023-07-01,Nómina,200.0,Ingreso
+2023-07-01,Nómina,50.0,Ingreso
+2023-07-01,Hogar - Otros,74.0,Gasto
+2023-07-01,Ventas,100.0,Ingreso
+2023-07-01,Ocio - Restaurantes,14.0,Gasto
+2023-07-01,Hogar - Otros,100.0,Gasto
+2023-07-01,Hogar - Otros,350.0,Gasto
+2023-08-01,Hogar - Otros,200.0,Gasto
+2023-08-01,Deporte - Deporte,15.0,Gasto
+2023-08-01,Hogar - Hipoteca,209.0,Gasto
+2023-08-01,Viajes - Viajes,200.0,Gasto
+2023-08-01,Hogar - Seguro hogar,27.0,Gasto
+2023-08-01,Hogar - Cuenta,200.0,Gasto
+2023-08-01,Nómina,200.0,Ingreso
+2023-08-01,Ocio - Restaurantes,33.0,Gasto
+2023-08-01,Ventas,15.0,Ingreso
+2023-08-01,Viajes - Viajes,222.0,Gasto
+2023-08-01,Ocio - Restaurantes,18.0,Gasto
+2023-08-01,Ocio - Restaurantes,18.0,Gasto
+2023-08-01,Nómina,100.0,Ingreso
+2023-08-01,Hogar - Otros,180.0,Gasto
+2023-08-01,Transporte,750.0,Gasto
+2023-08-01,Hogar - Seguro vida,18.0,Gasto
