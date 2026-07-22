@@ -4,6 +4,57 @@ const btnIncome = document.getElementById('btnIncome');
 const btnExpense = document.getElementById('btnExpense');
 const statusMessage = document.getElementById('statusMessage');
 
+// GitHub API config
+const GH_OWNER = 'miguelefvlc';
+const GH_REPO = 'econom-a';
+
+// Modal Elements
+const btnSettings = document.getElementById('btnSettings');
+const settingsModal = document.getElementById('settingsModal');
+const btnCloseSettings = document.getElementById('btnCloseSettings');
+const btnSaveSettings = document.getElementById('btnSaveSettings');
+const ghTokenInput = document.getElementById('ghToken');
+const settingsStatus = document.getElementById('settingsStatus');
+
+// Load token
+if (ghTokenInput) {
+    ghTokenInput.value = localStorage.getItem('gh_pat') || '';
+}
+
+if (btnSettings) {
+    btnSettings.addEventListener('click', () => {
+        settingsModal.classList.remove('hidden');
+    });
+}
+
+if (btnCloseSettings) {
+    btnCloseSettings.addEventListener('click', () => {
+        settingsModal.classList.add('hidden');
+        settingsStatus.textContent = '';
+        settingsStatus.classList.remove('show');
+    });
+}
+
+if (btnSaveSettings) {
+    btnSaveSettings.addEventListener('click', () => {
+        const token = ghTokenInput.value.trim();
+        if (token) {
+            localStorage.setItem('gh_pat', token);
+            settingsStatus.textContent = 'Token guardado en este navegador.';
+            settingsStatus.className = 'status-message show status-success';
+            setTimeout(() => {
+                settingsModal.classList.add('hidden');
+                settingsStatus.textContent = '';
+                settingsStatus.classList.remove('show');
+            }, 1500);
+        } else {
+            localStorage.removeItem('gh_pat');
+            settingsStatus.textContent = 'Token borrado.';
+            settingsStatus.className = 'status-message show status-success';
+        }
+    });
+}
+
 // Custom Dropdown Logic
 const dropdownHeader = document.getElementById('dropdownHeader');
 const dropdownList = document.getElementById('dropdownList');
@@ -62,35 +113,89 @@ async function addTransaction(type) {
         return;
     }
 
+    const token = localStorage.getItem('gh_pat');
+    if (!token) {
+        showStatus('Configura tu Token de GitHub primero.', 'error');
+        settingsModal.classList.remove('hidden');
+        return;
+    }
+
     const date = new Date();
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const year = date.getFullYear();
     const dateString = `${year}-${month}-${day}`;
     
-    const payload = {
-        date: dateString,
-        concept: concept,
-        amount: amount.toFixed(2),
-        type: type
-    };
+    const newLine = `\n${dateString},"${concept}",${amount.toFixed(2)},${type}`;
 
-    // Since we are running via Live Server without a backend, we cannot write to a file automatically.
-    // We will just show a simulation success message for now, and warn the user.
-    showStatus('Simulación: Modo Live Server no permite guardar CSV localmente.', 'success');
-    
-    // Simular que se guarda reseteando el form
-    amountInput.value = '';
-    conceptInput.value = 'Concepto';
-    selectedConceptText.textContent = 'Concepto';
-    headerIconContainer.setAttribute('data-lucide', 'help-circle');
-    lucide.createIcons();
-    selectedConceptText.classList.remove('bold-text');
-    selectedConceptText.classList.add('italic-text');
-    
-    // Recargar datos si es del año actual
-    if (yearSelector.value == new Date().getFullYear()) {
-        loadDashboardData();
+    showStatus('Guardando en GitHub...', 'success'); 
+
+    try {
+        const filePath = `data/transacciones_${year}.csv`;
+        const apiUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${filePath}`;
+        
+        let getRes = await fetch(apiUrl, {
+            headers: { 
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/vnd.github+json'
+            }
+        });
+        
+        let sha = null;
+        let content = '';
+        
+        if (getRes.ok) {
+            const data = await getRes.json();
+            sha = data.sha;
+            content = decodeURIComponent(escape(atob(data.content)));
+        } else if (getRes.status === 404) {
+            content = "Fecha,Concepto,Cantidad,Tipo";
+        } else {
+            const errData = await getRes.json().catch(() => ({}));
+            throw new Error(errData.message || 'Error al conectar con GitHub para leer el archivo.');
+        }
+        
+        // Limpiamos los saltos de línea finales del archivo original para no crear espacios en blanco
+        content = content.replace(/[\r\n]+$/, '');
+        content += newLine;
+        const encodedContent = btoa(unescape(encodeURIComponent(content)));
+        
+        const putRes = await fetch(apiUrl, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/vnd.github+json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                message: `Nueva transacción: ${concept} (${type})`,
+                content: encodedContent,
+                sha: sha
+            })
+        });
+        
+        if (!putRes.ok) {
+            const errData = await putRes.json().catch(() => ({}));
+            throw new Error(errData.message || 'Error al guardar archivo en GitHub.');
+        }
+        
+        showStatus('¡Guardado correctamente!', 'success');
+        
+        amountInput.value = '';
+        conceptInput.value = 'Nómina';
+        selectedConceptText.textContent = 'Nómina';
+        headerIconContainer.setAttribute('data-lucide', 'briefcase');
+        lucide.createIcons();
+        selectedConceptText.classList.add('bold-text');
+        selectedConceptText.classList.remove('italic-text');
+        
+        if (yearSelector.value == year) {
+            loadDashboardData();
+        }
+        
+    } catch (error) {
+        console.error(error);
+        showStatus('Error: ' + error.message, 'error');
     }
 }
 
@@ -202,6 +307,38 @@ async function loadAvailableYears() {
     });
 }
 
+async function fetchCSV(year) {
+    const token = localStorage.getItem('gh_pat');
+    
+    // Si tenemos token, intentamos leer la versión más reciente directamente de GitHub
+    if (token) {
+        const apiUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/data/transacciones_${year}.csv`;
+        try {
+            const res = await fetch(apiUrl, {
+                headers: { 
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/vnd.github.v3.raw' // Pide el archivo crudo, sin base64
+                }
+            });
+            if (res.ok) {
+                return await res.text();
+            }
+        } catch(e) {
+            console.warn("Fallo al leer de GitHub API, intentando archivo local", e);
+        }
+    }
+    
+    // Fallback: leer el archivo local o de GitHub Pages (añadimos timestamp para evitar caché)
+    try {
+        const res = await fetch(`data/transacciones_${year}.csv?t=${Date.now()}`);
+        if (res.ok) {
+            return await res.text();
+        }
+    } catch(e) {}
+    
+    return null;
+}
+
 async function loadDashboardData() {
     try {
         let lines = [];
@@ -210,21 +347,17 @@ async function loadDashboardData() {
             const startYear = 2021;
             const currentYear = new Date().getFullYear();
             for (let y = currentYear; y >= startYear; y--) {
-                try {
-                    const res = await fetch(`data/transacciones_${y}.csv`);
-                    if (res.ok) {
-                        const text = await res.text();
-                        const fileLines = text.trim().split('\n');
-                        if (fileLines.length > 0 && fileLines[0].includes('Concepto')) fileLines.shift();
-                        lines = lines.concat(fileLines);
-                    }
-                } catch(e) {}
+                const text = await fetchCSV(y);
+                if (text) {
+                    const fileLines = text.trim().split('\n');
+                    if (fileLines.length > 0 && fileLines[0].includes('Concepto')) fileLines.shift();
+                    lines = lines.concat(fileLines);
+                }
             }
         } else {
             const selectedYear = yearSelector.value || new Date().getFullYear();
-            const response = await fetch(`data/transacciones_${selectedYear}.csv`);
-            if (response.ok) {
-                const text = await response.text();
+            const text = await fetchCSV(selectedYear);
+            if (text) {
                 lines = text.trim().split('\n');
                 if (lines.length > 0 && lines[0].includes('Concepto')) lines.shift();
             }

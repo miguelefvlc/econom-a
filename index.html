@@ -15,7 +15,12 @@
         <div class="slider-wrapper" id="sliderWrapper">
             <!-- PANTALLA 1: FORMULARIO -->
             <div class="slide" id="slideForm">
-                <h1>NUEVO MOVIMIENTO</h1>
+                <div class="header-with-settings">
+                    <h1>NUEVO MOVIMIENTO</h1>
+                    <button id="btnSettings" class="btn-icon" title="Configuración">
+                        <i data-lucide="settings"></i>
+                    </button>
+                </div>
 
                 <div class="form-container" id="mainForm">
                     <div class="input-group">
@@ -158,6 +163,25 @@
         <div class="slider-nav" id="sliderNav">
             <span class="dot active" data-slide="0"></span>
             <span class="dot" data-slide="1"></span>
+        </div>
+
+        <!-- SETTINGS MODAL -->
+        <div id="settingsModal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Configuración</h2>
+                <div class="input-group">
+                    <label for="ghToken">Token de GitHub (PAT)</label>
+                    <input type="password" id="ghToken" placeholder="ghp_...">
+                    <small style="display:block; margin-top:8px; font-size:10px; color:var(--text-secondary); font-family:var(--font-mono);">
+                        Necesario para guardar datos en la nube.
+                    </small>
+                </div>
+                <div class="actions">
+                    <button id="btnSaveSettings" class="btn-income">Guardar</button>
+                    <button id="btnCloseSettings" class="btn-expense">Cerrar</button>
+                </div>
+                <p id="settingsStatus" class="status-message"></p>
+            </div>
         </div>
 
     </div>
