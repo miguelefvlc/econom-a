@@ -625,17 +625,16 @@ async function loadBudgetsData() {
         const currentYear = new Date().getFullYear();
         const currentMonthNum = new Date().getMonth() + 1; // 1-12
         
-        for (let y = currentYear; y >= startYearBudget; y--) {
-            const text = await fetchCSV(y);
-            if (text) {
-                const fileLines = text.trim().split('\n');
-                if (fileLines.length > 0 && fileLines[0].includes('Concepto')) fileLines.shift();
-                lines = lines.concat(fileLines);
-            }
+        // Para el acumulado anual, solo necesitamos el año en curso
+        const text = await fetchCSV(currentYear);
+        if (text) {
+            const fileLines = text.trim().split('\n');
+            if (fileLines.length > 0 && fileLines[0].includes('Concepto')) fileLines.shift();
+            lines = lines.concat(fileLines);
         }
         
-        // Inicio desde Enero (1) de 2026
-        let activeMonths = (currentYear - 2026) * 12 + currentMonthNum;
+        // El acumulado se reinicia cada año (en enero activeMonths es 1, en agosto es 8)
+        let activeMonths = currentMonthNum;
         if (activeMonths < 1) activeMonths = 1;
         
         let expensesSinceStart = {};
@@ -656,7 +655,8 @@ async function loadBudgetsData() {
             const rowYear = date.split('-')[0];
             const rowMonth = date.split('-')[1];
             
-            if (rowYear < '2026') continue;
+            // Solo tenemos en cuenta los gastos del año en curso para el acumulado anual
+            if (rowYear !== currentYearStr) continue;
             
             const conceptFull = parts[1].replace(/"/g, '');
             const amount = parseFloat(parts[2].replace(/"/g, ''));
