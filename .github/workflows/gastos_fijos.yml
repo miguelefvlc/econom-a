@@ -37,7 +37,7 @@ jobs:
           echo "$DATE_STR,\"Hogar - Otro\",200,Gasto" >> "$FILE"
           echo "$DATE_STR,\"Deporte - Gym\",15,Gasto" >> "$FILE"
           echo "$DATE_STR,\"Deporte - Fisioterapeuta\",45,Gasto" >> "$FILE"
-          echo "$DATE_STR,\"Plataformas digitales\",20,Gasto" >> "$FILE"
+          echo "$DATE_STR,\"Plataformas\",20,Gasto" >> "$FILE"
 
       - name: Hacer Commit y Subir
         run: |

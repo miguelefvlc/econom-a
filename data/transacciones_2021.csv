@@ -91,7 +91,7 @@ Fecha,Concepto,Cantidad,Tipo
 2021-06-29,Transporte,145.0,Gasto
 2021-06-29,Nómina,2034.0,Ingreso
 2021-06-30,Ocio - Restaurantes,40.0,Gasto
-2021-06-30,Renta,1612.0,Gasto
+2021-06-30,Impuestos y Renta,1612.0,Gasto
 2021-07-01,Móvil - Móvil,20.0,Gasto
 2021-07-01,Transporte,14.0,Gasto
 2021-07-01,Plataformas - Spotify,3.0,Gasto
@@ -205,7 +205,7 @@ Fecha,Concepto,Cantidad,Tipo
 2021-12-18,Ocio - Restaurantes,30.0,Gasto
 2021-12-19,Compras - Otros,9.0,Gasto
 2021-12-19,Ocio - Cerveza,4.0,Gasto
-2021-12-26,Renta,60.0,Gasto
+2021-12-26,Impuestos y Renta,60.0,Gasto
 2021-12-26,Ocio - Restaurantes,36.0,Gasto
 2021-12-26,Ocio - Restaurantes,20.0,Gasto
 2021-12-27,Compras - Otros,34.0,Gasto

@@ -202,6 +202,9 @@ async function addTransaction(type) {
         if (yearSelector.value == year) {
             loadDashboardData();
         }
+        if (currentSlide === 2) {
+            loadBudgetsData();
+        }
         
     } catch (error) {
         console.error(error);
@@ -234,13 +237,16 @@ let currentSlide = 0;
 
 function goToSlide(index) {
     currentSlide = index;
-    sliderWrapper.style.transform = `translateX(-${index * 50}%)`;
+    sliderWrapper.style.transform = `translateX(-${index * 33.3333}%)`;
     dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === index);
     });
     
     if (index === 1) {
         loadDashboardData();
+    }
+    if (index === 2) {
+        loadBudgetsData();
     }
 }
 
@@ -263,10 +269,10 @@ document.addEventListener('touchend', e => {
 function handleSwipe() {
     const threshold = 50; 
     if (touchEndX < touchStartX - threshold) {
-        if (currentSlide === 0) goToSlide(1);
+        if (currentSlide < 2) goToSlide(currentSlide + 1);
     }
     if (touchEndX > touchStartX + threshold) {
-        if (currentSlide === 1) goToSlide(0);
+        if (currentSlide > 0) goToSlide(currentSlide - 1);
     }
 }
 
@@ -472,12 +478,12 @@ function getIconForConcept(concept) {
     const icons = {
         'Nómina': 'briefcase',
         'Transporte': 'car',
-        'Plataformas digitales': 'monitor-play',
+        'Plataformas': 'monitor-play',
         'Compras': 'shopping-bag',
         'Viajes': 'plane',
         'Deporte': 'dumbbell',
         'Formación': 'graduation-cap',
-        'Impuestos': 'landmark',
+        'Impuestos y Renta': 'landmark',
         'Regalo': 'gift',
         'Ocio': 'coffee',
         'Hogar': 'home'
@@ -566,3 +572,140 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadAvailableYears();
     loadDashboardData();
 });
+
+// --- Budgets (Topes) Logic ---
+async function loadTopes() {
+    const token = localStorage.getItem('gh_pat');
+    let topes = {};
+    const fallbackTopes = {
+        'Hogar': 500, 'Ocio': 200, 'Compras': 150, 'Transporte': 70,
+        'Deporte': 70, 'Viajes': 70, 'Regalo': 40, 'Impuestos y Renta': 40, 'Plataformas': 20
+    };
+    
+    try {
+        let text = null;
+        if (token) {
+            const apiUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/data/topes.csv?t=${Date.now()}`;
+            try {
+                const res = await fetch(apiUrl, {
+                    headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github.v3.raw' },
+                    cache: 'no-store'
+                });
+                if (res.ok) text = await res.text();
+            } catch(e) {}
+        }
+        
+        if (!text) {
+            const res = await fetch(`data/topes.csv?t=${Date.now()}`);
+            if (res.ok) text = await res.text();
+        }
+        
+        if (text) {
+            const lines = text.trim().split('\n');
+            for (let i = 1; i < lines.length; i++) {
+                const parts = lines[i].split(',');
+                if (parts.length >= 2) {
+                    topes[parts[0].trim()] = parseFloat(parts[1].trim());
+                }
+            }
+        }
+    } catch (e) {
+        console.error("Error loading topes", e);
+    }
+    
+    if (Object.keys(topes).length === 0) topes = fallbackTopes;
+    return topes;
+}
+
+async function loadBudgetsData() {
+    try {
+        const topes = await loadTopes();
+        let lines = [];
+        const startYearBudget = 2026;
+        const currentYear = new Date().getFullYear();
+        const currentMonthNum = new Date().getMonth() + 1; // 1-12
+        
+        for (let y = currentYear; y >= startYearBudget; y--) {
+            const text = await fetchCSV(y);
+            if (text) {
+                const fileLines = text.trim().split('\n');
+                if (fileLines.length > 0 && fileLines[0].includes('Concepto')) fileLines.shift();
+                lines = lines.concat(fileLines);
+            }
+        }
+        
+        // Inicio desde Enero (1) de 2026
+        let activeMonths = (currentYear - 2026) * 12 + currentMonthNum;
+        if (activeMonths < 1) activeMonths = 1;
+        
+        let expensesSinceStart = {};
+        let expensesCurrentMonth = {};
+        
+        const currentMonthStr = String(currentMonthNum).padStart(2, '0');
+        const currentYearStr = String(currentYear);
+        
+        for (let line of lines) {
+            if (!line) continue;
+            if (line.startsWith('"') && line.endsWith('"')) {
+                line = line.substring(1, line.length - 1).replace(/""/g, '"');
+            }
+            const parts = line.split(',');
+            if (parts.length < 4) continue;
+            
+            const date = parts[0].replace(/"/g, ''); // YYYY-MM-DD
+            const rowYear = date.split('-')[0];
+            const rowMonth = date.split('-')[1];
+            
+            if (rowYear < '2026') continue;
+            
+            const conceptFull = parts[1].replace(/"/g, '');
+            const amount = parseFloat(parts[2].replace(/"/g, ''));
+            const type = parts[3].replace(/"/g, '').trim();
+            
+            if (type !== 'Gasto') continue;
+            
+            let parentConcept = conceptFull.includes(' - ') ? conceptFull.split(' - ')[0] : conceptFull;
+            
+            expensesSinceStart[parentConcept] = (expensesSinceStart[parentConcept] || 0) + amount;
+            
+            if (rowYear === currentYearStr && rowMonth === currentMonthStr) {
+                expensesCurrentMonth[parentConcept] = (expensesCurrentMonth[parentConcept] || 0) + amount;
+            }
+        }
+        
+        let html = '';
+        let sortedCats = Object.keys(topes).sort((a,b) => topes[b] - topes[a]);
+        
+        for (const cat of sortedCats) {
+            const tope = topes[cat];
+            const totalSpent = expensesSinceStart[cat] || 0;
+            const currentSpent = expensesCurrentMonth[cat] || 0;
+            const totalBudget = tope * activeMonths;
+            const accum = totalBudget - totalSpent;
+            
+            const iconName = getIconForConcept(cat);
+            const accumClass = accum >= 0 ? 'positive' : 'negative';
+            const accumSign = accum > 0 ? '+' : '';
+            
+            html += `
+                <div class="budget-item">
+                    <div class="budget-col-cat budget-cat-name">
+                        <i data-lucide="${iconName}"></i>
+                        ${cat}
+                    </div>
+                    <div class="budget-col-limit budget-val">${tope} €</div>
+                    <div class="budget-col-spent budget-val">${currentSpent} €</div>
+                    <div class="budget-col-accum budget-val ${accumClass}">${accumSign}${accum.toFixed(0)} €</div>
+                </div>
+            `;
+        }
+        
+        document.getElementById('budgetsList').innerHTML = html;
+        lucide.createIcons();
+        
+    } catch (err) {
+        console.error('Error cargando presupuestos:', err);
+        document.getElementById('budgetsList').innerHTML = '<div style="text-align:center; padding: 20px; color: #ff0055;">Error al cargar presupuestos.</div>';
+    }
+}
+

@@ -71,8 +71,8 @@
                                     <div class="dropdown-item" data-value="Transporte - Otro" data-icon="car">Otro</div>
                                 </div>
                                 
-                                <div class="dropdown-item bold-text" data-value="Plataformas digitales" data-icon="monitor-play">
-                                    <i data-lucide="monitor-play"></i> Plataformas digitales
+                                <div class="dropdown-item bold-text" data-value="Plataformas" data-icon="monitor-play">
+                                    <i data-lucide="monitor-play"></i> Plataformas
                                 </div>
                                 
                                 <div class="dropdown-group">
@@ -98,8 +98,8 @@
                                     <i data-lucide="graduation-cap"></i> Formación
                                 </div>
                                 
-                                <div class="dropdown-item bold-text" data-value="Impuestos" data-icon="landmark">
-                                    <i data-lucide="landmark"></i> Impuestos
+                                <div class="dropdown-item bold-text" data-value="Impuestos y Renta" data-icon="landmark">
+                                    <i data-lucide="landmark"></i> Impuestos y Renta
                                 </div>
                                 
                                 <div class="dropdown-item bold-text" data-value="Regalo" data-icon="gift">
@@ -176,11 +176,32 @@
                     </div>
                 </div>
             </div>
+
+            <!-- PANTALLA 3: PRESUPUESTOS -->
+            <div class="slide" id="slideBudgets">
+                <div class="balance-header">
+                    <h1>PRESUPUESTOS</h1>
+                </div>
+                
+                <div class="budgets-container dashboard-container">
+                    <div class="budgets-header-row">
+                        <span class="budget-col-cat">CATEGORÍA</span>
+                        <span class="budget-col-limit">TOPE/M</span>
+                        <span class="budget-col-spent">GASTO/M</span>
+                        <span class="budget-col-accum">ACUMULADO ANUAL</span>
+                    </div>
+                    <div class="budgets-list history-list" id="budgetsList">
+                        <!-- Presupuestos go here -->
+                        <div style="text-align:center; padding: 20px; color: #64748b;">Cargando...</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="slider-nav" id="sliderNav">
             <span class="dot active" data-slide="0"></span>
             <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
         </div>
 
         <!-- SETTINGS MODAL -->
