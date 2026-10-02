@@ -95,51 +95,51 @@ Fecha,Concepto,Cantidad,Tipo
 2026-07-01,Transporte,30.0,Gasto
 2026-07-01,Plataformas - Otras,30.0,Gasto
 "2026-07-22,""Ocio - Restaurantes"",9.00,Gasto"
-2026-07-24,"Ocio - Celebraciones",51,Gasto
-2026-07-24,"Ocio - Restaurantes",17,Gasto
-2026-07-25,"Ocio - Restaurantes",40,Gasto
-2026-07-29,"Hogar - Otro",200,Gasto
-2026-07-30,"Nómina",1455,Ingreso
-2026-08-01,"Hogar - Hipoteca",209,Gasto
-2026-08-01,"Hogar - Seguro de vida",18,Gasto
-2026-08-01,"Hogar - Seguro de hogar",27,Gasto
-2026-08-01,"Hogar - Otro",200,Gasto
-2026-08-01,"Deporte - Gym",15,Gasto
-2026-08-01,"Deporte - Fisioterapeuta",45,Gasto
-2026-08-01,"Plataformas",20,Gasto
-2026-08-03,"Hogar - Otro",73,Gasto
-2026-08-04,"Transporte - Otro",30,Gasto
-2026-08-06,"Ocio - Restaurantes",33,Gasto
-2026-08-07,"Transporte - Combustible",10,Gasto
-2026-08-08,"Ocio - Celebraciones",14,Gasto
-2026-08-08,"Deporte - Ropa y accesorios",24,Gasto
-2026-08-19,"Viajes",424,Gasto
-2026-08-24,"Ocio - Comida a domicilio",20,Gasto
-2026-08-24,"Regalo",50,Gasto
-2026-08-28,"Nómina",2622,Ingreso
-2026-08-28,"Ocio - Celebraciones",35,Gasto
-2026-09-01,"Hogar - Hipoteca",209,Gasto
-2026-09-01,"Hogar - Seguro de vida",18,Gasto
-2026-09-01,"Hogar - Seguro de hogar",27,Gasto
-2026-09-01,"Hogar - Otro",200,Gasto
-2026-09-01,"Deporte - Gym",15,Gasto
-2026-09-01,"Deporte - Fisioterapeuta",45,Gasto
-2026-09-01,"Plataformas",20,Gasto
-2026-09-02,"Transporte - Otro",30,Gasto
-2026-09-07,"Compras - Otro",150,Gasto
-2026-09-07,"Ocio - Restaurantes",16,Gasto
-2026-09-11,"Compras - Otro",150,Gasto
-2026-09-11,"Compras - Otro",40,Gasto
-2026-09-11,"Transporte - Seguro",170,Gasto
-2026-10-01,"Hogar - Hipoteca",209,Gasto
-2026-10-01,"Hogar - Seguro de vida",18,Gasto
-2026-10-01,"Hogar - Seguro de hogar",27,Gasto
-2026-10-01,"Hogar - Otro",200,Gasto
-2026-10-01,"Deporte - Gym",15,Gasto
-2026-10-01,"Deporte - Fisioterapeuta",45,Gasto
-2026-10-01,"Plataformas",20,Gasto
-2026-10-02,"Ocio - Restaurantes",27,Gasto
-2026-10-02,"Ocio - Comida a domicilio",14,Gasto
-2026-10-02,"Viajes",104,Gasto
-2026-10-02,"Compras - Otro",200,Gasto
-2026-10-02,"Impuestos y Renta",73,Gasto
+"2026-07-24,""Ocio - Celebraciones"",51,Gasto"
+"2026-07-24,""Ocio - Restaurantes"",17,Gasto"
+"2026-07-25,""Ocio - Restaurantes"",40,Gasto"
+"2026-07-29,""Hogar - Otro"",200,Gasto"
+"2026-07-30,""Nómina"",1455,Ingreso"
+"2026-08-01,""Hogar - Hipoteca"",209,Gasto"
+"2026-08-01,""Hogar - Seguro de vida"",18,Gasto"
+"2026-08-01,""Hogar - Seguro de hogar"",27,Gasto"
+"2026-08-01,""Hogar - Otro"",200,Gasto"
+"2026-08-01,""Deporte - Gym"",15,Gasto"
+"2026-08-01,""Deporte - Fisioterapeuta"",45,Gasto"
+"2026-08-01,""Plataformas"",20,Gasto"
+"2026-08-03,""Hogar - Otro"",73,Gasto"
+"2026-08-04,""Transporte - Otro"",30,Gasto"
+"2026-08-06,""Ocio - Restaurantes"",33,Gasto"
+"2026-08-07,""Transporte - Combustible"",10,Gasto"
+"2026-08-08,""Ocio - Celebraciones"",14,Gasto"
+"2026-08-08,""Deporte - Ropa y accesorios"",24,Gasto"
+"2026-08-19,""Viajes"",424,Gasto"
+"2026-08-24,""Ocio - Comida a domicilio"",20,Gasto"
+"2026-08-24,""Regalo"",50,Gasto"
+"2026-08-28,""Nómina"",2622,Ingreso"
+"2026-08-28,""Ocio - Celebraciones"",35,Gasto"
+"2026-09-01,""Hogar - Hipoteca"",209,Gasto"
+"2026-09-01,""Hogar - Seguro de vida"",18,Gasto"
+"2026-09-01,""Hogar - Seguro de hogar"",27,Gasto"
+"2026-09-01,""Hogar - Otro"",200,Gasto"
+"2026-09-01,""Deporte - Gym"",15,Gasto"
+"2026-09-01,""Deporte - Fisioterapeuta"",45,Gasto"
+"2026-09-01,""Plataformas"",20,Gasto"
+"2026-09-02,""Transporte - Otro"",30,Gasto"
+"2026-09-07,""Compras - Otro"",150,Gasto"
+"2026-09-07,""Ocio - Restaurantes"",16,Gasto"
+"2026-09-11,""Compras - Otro"",150,Gasto"
+"2026-09-11,""Compras - Otro"",40,Gasto"
+"2026-09-11,""Transporte - Seguro"",170,Gasto"
+"2026-10-01,""Hogar - Hipoteca"",209,Gasto"
+"2026-10-01,""Hogar - Seguro de vida"",18,Gasto"
+"2026-10-01,""Hogar - Seguro de hogar"",27,Gasto"
+"2026-10-01,""Hogar - Otro"",200,Gasto"
+"2026-10-01,""Deporte - Gym"",15,Gasto"
+"2026-10-01,""Deporte - Fisioterapeuta"",45,Gasto"
+"2026-10-01,""Plataformas"",20,Gasto"
+"2026-10-01,""Ocio - Restaurantes"",27,Gasto"
+"2026-10-01,""Ocio - Comida a domicilio"",14,Gasto"
+"2026-09-11,""Viajes"",104,Gasto"
+"2026-09-11,""Compras - Otro"",200,Gasto"
+"2026-09-11,""Impuestos y Renta"",73,Gasto"
